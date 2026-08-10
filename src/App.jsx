@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
-
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -33,21 +32,20 @@ export default function App() {
 
   return (
     <>
-      <AnimatePresence>
-        {isLoading && (
-          <LoadingScreen onComplete={() => setIsLoading(false)} />
-        )}
-      </AnimatePresence>
+      {isLoading && (
+        <LoadingScreen onComplete={() => setIsLoading(false)} />
+      )}
 
-      <div className="min-h-screen bg-[#070A12] text-slate-100 selection:bg-cyan-500 selection:text-black font-sans relative">
+      <div className="min-h-screen bg-[#050505] text-white selection:bg-[#FF1744] selection:text-white font-sans relative">
+
         {/* Custom Glowing Mouse Follower */}
         <CustomCursor />
 
         {/* Navigation Bar */}
-        <Navbar 
-          darkMode={darkMode} 
-          setDarkMode={setDarkMode} 
-          onOpenResume={() => setResumeOpen(true)} 
+        <Navbar
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          onOpenResume={() => setResumeOpen(true)}
         />
 
         {/* Hero Section */}
@@ -78,10 +76,11 @@ export default function App() {
         <Footer />
 
         {/* Printable / Downloadable Resume Drawer */}
-        <ResumeModal 
-          isOpen={resumeOpen} 
-          onClose={() => setResumeOpen(false)} 
+        <ResumeModal
+          isOpen={resumeOpen}
+          onClose={() => setResumeOpen(false)}
         />
+
       </div>
     </>
   );

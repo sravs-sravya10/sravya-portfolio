@@ -32,7 +32,7 @@ import {
   Flame,
 } from 'lucide-react';
 
-import  { skillsData } from '../data/portfolioData';
+import { skillsData } from '../data/portfolioData';
 
 const getSkillIcon = (iconName) => {
   const icons = {
@@ -67,14 +67,18 @@ const getSkillIcon = (iconName) => {
   };
 
   const IconComponent = icons[iconName] || Code;
-  return <IconComponent size={20} />;
+
+  return <IconComponent size={22} />;
 };
 
 const Skills = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const categories = ['All', ...skillsData.map((item) => item.category)];
+  const categories = [
+    'All',
+    ...skillsData.map((item) => item.category),
+  ];
 
   const filteredCategories = skillsData
     .map((category) => {
@@ -86,7 +90,9 @@ const Skills = () => {
       }
 
       const filteredSkills = category.skills.filter((skill) =>
-        skill.name.toLowerCase().includes(searchQuery.toLowerCase())
+        skill.name
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
       );
 
       if (filteredSkills.length === 0) return null;
@@ -101,46 +107,81 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-24 relative overflow-hidden bg-dark-bg/50"
+      className="relative py-24 bg-[#050505] text-white overflow-hidden"
     >
-      <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-cyan-500/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-[120px]" />
+      {/* =========================================
+          BACKGROUND RED GLOWS
+          ========================================= */}
+
+      <div className="absolute top-20 left-10 w-80 h-80 bg-[#FF1744]/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D50032]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        {/* =========================================
+            SECTION HEADER
+            ========================================= */}
+
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs uppercase tracking-widest font-mono">
+
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF1744]/10 border border-[#FF1744]/30 text-[#FF1744] text-xs uppercase tracking-widest font-mono">
+
             <Cpu size={15} />
+
             Tech Stack & Competencies
+
           </div>
 
           <h2 className="mt-5 text-4xl sm:text-5xl font-bold text-white">
-            Skills & <span className="text-gradient">Technologies</span>
+
+            Skills &{' '}
+
+            <span className="text-gradient">
+              Technologies
+            </span>
+
           </h2>
 
           <p className="mt-4 text-slate-400">
-            Technologies and tools I use to build modern web applications and AI
-            solutions.
+            Technologies and tools I use to build modern web applications
+            and AI solutions.
           </p>
+
         </div>
 
+        {/* =========================================
+            CATEGORY + SEARCH
+            ========================================= */}
+
         <div className="flex flex-col md:flex-row justify-between gap-6 mb-12">
+
+          {/* Categories */}
+
           <div className="flex flex-wrap gap-2">
+
             {categories.map((cat) => (
+
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl transition ${
+                className={`px-4 py-2 rounded-xl transition-all duration-300 ${
                   selectedCategory === cat
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
-                    : 'bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10'
+                    ? 'bg-gradient-to-r from-[#D50032] to-[#FF1744] text-white shadow-lg shadow-red-500/20'
+                    : 'bg-white/5 text-slate-300 border border-white/10 hover:bg-[#FF1744]/10 hover:border-[#FF1744]/30 hover:text-[#FF1744]'
                 }`}
               >
                 {cat}
               </button>
+
             ))}
+
           </div>
 
+          {/* Search */}
+
           <div className="relative w-full md:w-72">
+
             <Search
               size={18}
               className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
@@ -151,13 +192,21 @@ const Skills = () => {
               placeholder="Search skills..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-white/5 rounded-xl border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-500"
+              className="w-full pl-10 pr-4 py-3 bg-white/5 rounded-xl border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:border-[#FF1744] focus:ring-1 focus:ring-[#FF1744]/30 transition-all"
             />
+
           </div>
+
         </div>
 
+        {/* =========================================
+            SKILLS
+            ========================================= */}
+
         <AnimatePresence mode="wait">
+
           {filteredCategories.map((group) => (
+
             <motion.div
               key={group.category}
               initial={{ opacity: 0, y: 20 }}
@@ -166,38 +215,59 @@ const Skills = () => {
               transition={{ duration: 0.4 }}
               className="mb-12"
             >
+
+              {/* Category Header */}
+
               <div className="flex items-center gap-3 mb-6">
-                <span className="w-3 h-3 bg-cyan-400 rounded-full"></span>
+
+                <span className="w-3 h-3 bg-[#FF1744] rounded-full shadow-[0_0_12px_rgba(255,23,68,.6)]" />
 
                 <h3 className="text-2xl font-bold text-white">
                   {group.category}
                 </h3>
 
-                <span className="text-cyan-400 text-sm">
+                <span className="text-[#FF1744] text-sm">
                   ({group.skills.length})
                 </span>
+
               </div>
 
+              {/* Skill Cards */}
+
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
                 {group.skills.map((skill, index) => (
+
                   <motion.div
                     key={skill.name}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{
+                      opacity: 0,
+                      scale: 0.95,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                    }}
                     transition={{
                       delay: index * 0.05,
                     }}
-                    className="glass-card p-6 rounded-2xl hover:border-cyan-500/40"
+                    className="glass-card p-6 rounded-2xl hover:border-[#FF1744]/50 hover:shadow-[0_0_25px_rgba(255,23,68,.08)]"
                   >
+
+                    {/* Skill Header */}
+
                     <div className="flex justify-between items-center mb-5">
+
                       <div className="flex items-center gap-3">
-                        <div
-                          className={`p-3 rounded-xl bg-gradient-to-br ${skill.color}`}
-                        >
+
+                        {/* Icon */}
+
+                        <div className="p-3 rounded-xl bg-gradient-to-br from-[#D50032] to-[#FF1744] text-white shadow-lg shadow-red-500/20">
                           {getSkillIcon(skill.icon)}
                         </div>
 
                         <div>
+
                           <h4 className="text-white font-semibold">
                             {skill.name}
                           </h4>
@@ -205,15 +275,23 @@ const Skills = () => {
                           <p className="text-slate-400 text-xs">
                             {group.category}
                           </p>
+
                         </div>
+
                       </div>
 
-                      <span className="text-cyan-400 font-semibold">
+                      {/* Percentage */}
+
+                      <span className="text-[#FF1744] font-semibold">
                         {skill.level}%
                       </span>
+
                     </div>
 
+                    {/* Progress Bar */}
+
                     <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{
@@ -221,21 +299,37 @@ const Skills = () => {
                         }}
                         viewport={{ once: true }}
                         transition={{ duration: 1 }}
-                        className={`h-full rounded-full bg-gradient-to-r ${skill.color}`}
+                        className="h-full rounded-full bg-gradient-to-r from-[#D50032] via-[#FF1744] to-[#FF2B55] shadow-[0_0_10px_rgba(255,23,68,.35)]"
                       />
+
                     </div>
+
                   </motion.div>
+
                 ))}
+
               </div>
+
             </motion.div>
+
           ))}
+
         </AnimatePresence>
 
+        {/* =========================================
+            NO RESULTS
+            ========================================= */}
+
         {filteredCategories.length === 0 && (
-          <div className="text-center text-slate-400">
+
+          <div className="text-center text-slate-400 py-10">
+
             No skills found matching "{searchQuery}".
+
           </div>
+
         )}
+
       </div>
     </section>
   );

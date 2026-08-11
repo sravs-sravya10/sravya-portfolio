@@ -107,15 +107,15 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative py-24 bg-[#050505] text-white overflow-hidden"
+      className="relative py-24 bg-[#05030a] text-white overflow-hidden"
     >
       {/* =========================================
-          BACKGROUND RED GLOWS
+          BACKGROUND PURPLE GLOWS
           ========================================= */}
 
-      <div className="absolute top-20 left-10 w-80 h-80 bg-[#FF1744]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-20 left-10 w-80 h-80 bg-[#8B5CF6]/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D50032]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#6D28D9]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -125,7 +125,7 @@ const Skills = () => {
 
         <div className="text-center max-w-3xl mx-auto mb-12">
 
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF1744]/10 border border-[#FF1744]/30 text-[#FF1744] text-xs uppercase tracking-widest font-mono">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8B5CF6]/10 border border-[#8B5CF6]/30 text-[#A855F7] text-xs uppercase tracking-widest font-mono">
 
             <Cpu size={15} />
 
@@ -167,8 +167,8 @@ const Skills = () => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 rounded-xl transition-all duration-300 ${
                   selectedCategory === cat
-                    ? 'bg-gradient-to-r from-[#D50032] to-[#FF1744] text-white shadow-lg shadow-red-500/20'
-                    : 'bg-white/5 text-slate-300 border border-white/10 hover:bg-[#FF1744]/10 hover:border-[#FF1744]/30 hover:text-[#FF1744]'
+                    ? 'bg-gradient-to-r from-[#6D28D9] to-[#8B5CF6] text-white shadow-lg shadow-purple-500/20 border border-[#8B5CF6]/40'
+                    : 'bg-white/5 text-slate-300 border border-white/10 hover:bg-[#8B5CF6]/10 hover:border-[#8B5CF6]/30 hover:text-[#A855F7]'
                 }`}
               >
                 {cat}
@@ -184,7 +184,7 @@ const Skills = () => {
 
             <Search
               size={18}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-[#A855F7]"
             />
 
             <input
@@ -192,7 +192,7 @@ const Skills = () => {
               placeholder="Search skills..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-white/5 rounded-xl border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:border-[#FF1744] focus:ring-1 focus:ring-[#FF1744]/30 transition-all"
+              className="w-full pl-10 pr-4 py-3 bg-white/5 rounded-xl border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:border-[#8B5CF6] focus:ring-1 focus:ring-[#8B5CF6]/30 transition-all"
             />
 
           </div>
@@ -209,10 +209,20 @@ const Skills = () => {
 
             <motion.div
               key={group.category}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+              }}
+              transition={{
+                duration: 0.4,
+              }}
               className="mb-12"
             >
 
@@ -220,13 +230,13 @@ const Skills = () => {
 
               <div className="flex items-center gap-3 mb-6">
 
-                <span className="w-3 h-3 bg-[#FF1744] rounded-full shadow-[0_0_12px_rgba(255,23,68,.6)]" />
+                <span className="w-3 h-3 bg-[#8B5CF6] rounded-full shadow-[0_0_12px_rgba(139,92,246,.6)]" />
 
                 <h3 className="text-2xl font-bold text-white">
                   {group.category}
                 </h3>
 
-                <span className="text-[#FF1744] text-sm">
+                <span className="text-[#A855F7] text-sm">
                   ({group.skills.length})
                 </span>
 
@@ -251,7 +261,7 @@ const Skills = () => {
                     transition={{
                       delay: index * 0.05,
                     }}
-                    className="glass-card p-6 rounded-2xl hover:border-[#FF1744]/50 hover:shadow-[0_0_25px_rgba(255,23,68,.08)]"
+                    className="glass-card p-6 rounded-2xl hover:border-[#8B5CF6]/50 hover:shadow-[0_0_25px_rgba(139,92,246,.08)]"
                   >
 
                     {/* Skill Header */}
@@ -262,8 +272,10 @@ const Skills = () => {
 
                         {/* Icon */}
 
-                        <div className="p-3 rounded-xl bg-gradient-to-br from-[#D50032] to-[#FF1744] text-white shadow-lg shadow-red-500/20">
+                        <div className="p-3 rounded-xl bg-gradient-to-br from-[#6D28D9] to-[#8B5CF6] text-white shadow-lg shadow-purple-500/20">
+
                           {getSkillIcon(skill.icon)}
+
                         </div>
 
                         <div>
@@ -282,7 +294,7 @@ const Skills = () => {
 
                       {/* Percentage */}
 
-                      <span className="text-[#FF1744] font-semibold">
+                      <span className="text-[#A855F7] font-semibold">
                         {skill.level}%
                       </span>
 
@@ -293,13 +305,19 @@ const Skills = () => {
                     <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
 
                       <motion.div
-                        initial={{ width: 0 }}
+                        initial={{
+                          width: 0,
+                        }}
                         whileInView={{
                           width: `${skill.level}%`,
                         }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1 }}
-                        className="h-full rounded-full bg-gradient-to-r from-[#D50032] via-[#FF1744] to-[#FF2B55] shadow-[0_0_10px_rgba(255,23,68,.35)]"
+                        viewport={{
+                          once: true,
+                        }}
+                        transition={{
+                          duration: 1,
+                        }}
+                        className="h-full rounded-full bg-gradient-to-r from-[#6D28D9] via-[#8B5CF6] to-[#A855F7] shadow-[0_0_10px_rgba(139,92,246,.35)]"
                       />
 
                     </div>

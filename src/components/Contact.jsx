@@ -94,16 +94,16 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-24 relative overflow-hidden bg-[#050505]"
+      className="py-24 relative overflow-hidden bg-[#05030a]"
     >
 
       {/* =========================================
-          RED BACKGROUND GLOW
+          PURPLE BACKGROUND GLOW
           ========================================= */}
 
-      <div className="absolute bottom-10 right-10 w-[30rem] h-[30rem] bg-[#FF1744]/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[30rem] h-[30rem] bg-[#8B5CF6]/5 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="absolute top-10 left-10 w-80 h-80 bg-[#D50032]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-10 left-10 w-80 h-80 bg-[#6D28D9]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -113,7 +113,7 @@ export const Contact = () => {
 
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
 
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF1744]/10 border border-[#FF1744]/30 text-[#FF1744] text-xs font-mono tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B5CF6]/10 border border-[#8B5CF6]/30 text-[#A855F7] text-xs font-mono tracking-widest uppercase">
 
             <MessageSquare size={14} />
 
@@ -181,15 +181,13 @@ export const Contact = () => {
 
               <div className="space-y-4">
 
-                {/* =========================================
-                    EMAIL
-                    ========================================= */}
+                {/* EMAIL */}
 
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between group hover:border-[#FF1744]/30 transition-colors">
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between group hover:border-[#8B5CF6]/30 transition-colors">
 
                   <div className="flex items-center gap-3">
 
-                    <div className="p-2.5 rounded-xl bg-[#FF1744]/10 text-[#FF1744]">
+                    <div className="p-2.5 rounded-xl bg-[#8B5CF6]/10 text-[#A855F7]">
                       <Mail size={20} />
                     </div>
 
@@ -201,7 +199,7 @@ export const Contact = () => {
 
                       <a
                         href={`mailto:${personalInfo.contact.email}`}
-                        className="text-xs font-mono text-white hover:text-[#FF4D6D] transition-colors"
+                        className="text-xs font-mono text-white hover:text-[#C084FC] transition-colors"
                       >
                         {personalInfo.contact.email}
                       </a>
@@ -217,14 +215,14 @@ export const Contact = () => {
                         'email'
                       )
                     }
-                    className="p-2 rounded-lg bg-white/5 hover:bg-[#FF1744]/10 text-slate-400 hover:text-[#FF1744] transition-colors"
+                    className="p-2 rounded-lg bg-white/5 hover:bg-[#8B5CF6]/10 text-slate-400 hover:text-[#A855F7] transition-colors"
                     title="Copy Email"
                   >
 
                     {copiedField === 'email' ? (
                       <Check
                         size={16}
-                        className="text-[#FF4D6D]"
+                        className="text-[#C084FC]"
                       />
                     ) : (
                       <Copy size={16} />
@@ -234,15 +232,13 @@ export const Contact = () => {
 
                 </div>
 
-                {/* =========================================
-                    PHONE
-                    ========================================= */}
+                {/* PHONE */}
 
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between group hover:border-[#FF1744]/30 transition-colors">
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between group hover:border-[#8B5CF6]/30 transition-colors">
 
                   <div className="flex items-center gap-3">
 
-                    <div className="p-2.5 rounded-xl bg-[#FF1744]/10 text-[#FF1744]">
+                    <div className="p-2.5 rounded-xl bg-[#8B5CF6]/10 text-[#A855F7]">
                       <Phone size={20} />
                     </div>
 
@@ -267,14 +263,14 @@ export const Contact = () => {
                         'phone'
                       )
                     }
-                    className="p-2 rounded-lg bg-white/5 hover:bg-[#FF1744]/10 text-slate-400 hover:text-[#FF1744] transition-colors"
+                    className="p-2 rounded-lg bg-white/5 hover:bg-[#8B5CF6]/10 text-slate-400 hover:text-[#A855F7] transition-colors"
                     title="Copy Phone"
                   >
 
                     {copiedField === 'phone' ? (
                       <Check
                         size={16}
-                        className="text-[#FF4D6D]"
+                        className="text-[#C084FC]"
                       />
                     ) : (
                       <Copy size={16} />
@@ -284,13 +280,11 @@ export const Contact = () => {
 
                 </div>
 
-                {/* =========================================
-                    LOCATION
-                    ========================================= */}
+                {/* LOCATION */}
 
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/5 flex items-center gap-3 group hover:border-[#FF1744]/30 transition-colors">
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/5 flex items-center gap-3 group hover:border-[#8B5CF6]/30 transition-colors">
 
-                  <div className="p-2.5 rounded-xl bg-[#FF1744]/10 text-[#FF1744]">
+                  <div className="p-2.5 rounded-xl bg-[#8B5CF6]/10 text-[#A855F7]">
                     <MapPin size={20} />
                   </div>
 
@@ -310,9 +304,7 @@ export const Contact = () => {
 
               </div>
 
-              {/* =========================================
-                  SOCIAL LINKS
-                  ========================================= */}
+              {/* SOCIAL LINKS */}
 
               <div className="pt-4 border-t border-white/10 flex items-center gap-3">
 
@@ -322,7 +314,7 @@ export const Contact = () => {
                   href={personalInfo.contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 hover:bg-[#FF1744]/10 border border-white/10 hover:border-[#FF1744]/30 text-slate-200 hover:text-[#FF4D6D] text-xs font-medium transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 hover:bg-[#8B5CF6]/10 border border-white/10 hover:border-[#8B5CF6]/30 text-slate-200 hover:text-[#C084FC] text-xs font-medium transition-colors"
                 >
 
                   <Linkedin size={16} />
@@ -339,7 +331,7 @@ export const Contact = () => {
                   href={personalInfo.contact.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 hover:bg-[#FF1744]/10 border border-white/10 hover:border-[#FF1744]/30 text-slate-200 hover:text-[#FF4D6D] text-xs font-medium transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 hover:bg-[#8B5CF6]/10 border border-white/10 hover:border-[#8B5CF6]/30 text-slate-200 hover:text-[#C084FC] text-xs font-medium transition-colors"
                 >
 
                   <Github size={16} />
@@ -412,8 +404,8 @@ export const Contact = () => {
                     className={`w-full px-4 py-3 rounded-xl bg-white/5 border ${
                       errors.name
                         ? 'border-red-500'
-                        : 'border-white/10 focus:border-[#FF1744]/60'
-                    } text-white text-xs placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-[#FF1744]/20 transition-colors`}
+                        : 'border-white/10 focus:border-[#8B5CF6]/60'
+                    } text-white text-xs placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-[#8B5CF6]/20 transition-colors`}
                   />
 
                   {errors.name && (
@@ -445,8 +437,8 @@ export const Contact = () => {
                     className={`w-full px-4 py-3 rounded-xl bg-white/5 border ${
                       errors.email
                         ? 'border-red-500'
-                        : 'border-white/10 focus:border-[#FF1744]/60'
-                    } text-white text-xs placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-[#FF1744]/20 transition-colors`}
+                        : 'border-white/10 focus:border-[#8B5CF6]/60'
+                    } text-white text-xs placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-[#8B5CF6]/20 transition-colors`}
                   />
 
                   {errors.email && (
@@ -480,8 +472,8 @@ export const Contact = () => {
                   className={`w-full px-4 py-3 rounded-xl bg-white/5 border ${
                     errors.subject
                       ? 'border-red-500'
-                      : 'border-white/10 focus:border-[#FF1744]/60'
-                  } text-white text-xs placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-[#FF1744]/20 transition-colors`}
+                      : 'border-white/10 focus:border-[#8B5CF6]/60'
+                  } text-white text-xs placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-[#8B5CF6]/20 transition-colors`}
                 />
 
                 {errors.subject && (
@@ -513,8 +505,8 @@ export const Contact = () => {
                   className={`w-full px-4 py-3 rounded-xl bg-white/5 border ${
                     errors.message
                       ? 'border-red-500'
-                      : 'border-white/10 focus:border-[#FF1744]/60'
-                  } text-white text-xs placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-[#FF1744]/20 transition-colors resize-none`}
+                      : 'border-white/10 focus:border-[#8B5CF6]/60'
+                  } text-white text-xs placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-[#8B5CF6]/20 transition-colors resize-none`}
                 />
 
                 {errors.message && (
@@ -525,14 +517,12 @@ export const Contact = () => {
 
               </div>
 
-              {/* =========================================
-                  SEND BUTTON
-                  ========================================= */}
+              {/* SEND BUTTON */}
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-[#D50032] via-[#FF1744] to-[#FF2B55] hover:from-[#FF1744] hover:to-[#FF4D6D] text-white font-semibold text-xs shadow-lg shadow-red-500/25 transition-all transform hover:-translate-y-0.5 disabled:opacity-50"
+                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-[#6D28D9] via-[#8B5CF6] to-[#A855F7] hover:from-[#8B5CF6] hover:to-[#C084FC] text-white font-semibold text-xs shadow-lg shadow-purple-500/25 transition-all transform hover:-translate-y-0.5 disabled:opacity-50"
               >
 
                 {isSubmitting ? (
@@ -574,7 +564,7 @@ export const Contact = () => {
                     opacity: 0,
                     y: 10,
                   }}
-                  className="mt-4 p-4 rounded-xl bg-[#FF1744]/10 border border-[#FF1744]/30 text-[#FF4D6D] text-xs font-mono flex items-center gap-2"
+                  className="mt-4 p-4 rounded-xl bg-[#8B5CF6]/10 border border-[#8B5CF6]/30 text-[#C084FC] text-xs font-mono flex items-center gap-2"
                 >
 
                   <Sparkles size={16} />

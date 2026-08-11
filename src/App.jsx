@@ -32,11 +32,25 @@ export default function App() {
 
   return (
     <>
+      {/* Loading Screen */}
       {isLoading && (
-        <LoadingScreen onComplete={() => setIsLoading(false)} />
+        <LoadingScreen
+          onComplete={() => setIsLoading(false)}
+        />
       )}
 
-      <div className="min-h-screen bg-[#050505] text-white selection:bg-[#FF1744] selection:text-white font-sans relative">
+      {/* Main Portfolio */}
+      <div
+        className="
+          min-h-screen
+          bg-[#05030a]
+          text-white
+          selection:bg-[#8B5CF6]
+          selection:text-white
+          font-sans
+          relative
+        "
+      >
 
         {/* Custom Glowing Mouse Follower */}
         <CustomCursor />
@@ -49,7 +63,9 @@ export default function App() {
         />
 
         {/* Hero Section */}
-        <Hero onOpenResume={() => setResumeOpen(true)} />
+        <Hero
+          onOpenResume={() => setResumeOpen(true)}
+        />
 
         {/* About & Education Section */}
         <About />
@@ -75,7 +91,7 @@ export default function App() {
         {/* Footer */}
         <Footer />
 
-        {/* Printable / Downloadable Resume Drawer */}
+        {/* Resume Modal */}
         <ResumeModal
           isOpen={resumeOpen}
           onClose={() => setResumeOpen(false)}

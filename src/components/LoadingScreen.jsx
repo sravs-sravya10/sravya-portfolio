@@ -4,6 +4,7 @@ import { Terminal } from 'lucide-react';
 
 export const LoadingScreen = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
+
   const [bootText, setBootText] = useState(
     'Initializing Portfolio System...'
   );
@@ -52,76 +53,194 @@ export const LoadingScreen = ({ onComplete }) => {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed inset-0 z-50 bg-[#050505] flex items-center justify-center p-6"
+      className="
+        fixed
+        inset-0
+        z-50
+        bg-[#05030a]
+        flex
+        items-center
+        justify-center
+        p-6
+      "
     >
 
-      {/* Red Background Glow */}
+      {/* =========================================
+          PURPLE BACKGROUND GLOW
+          ========================================= */}
 
-      <div className="absolute w-[500px] h-[500px] bg-[#FF1744]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div
+        className="
+          absolute
+          w-[500px]
+          h-[500px]
+          bg-[#8B5CF6]/5
+          rounded-full
+          blur-[150px]
+          pointer-events-none
+        "
+      />
 
-      {/* Loading Card */}
+      {/* =========================================
+          LOADING CARD
+          ========================================= */}
 
       <div className="relative w-full max-w-md">
 
-        <div className="bg-[#0D0D0D] border border-[#FF1744]/20 rounded-3xl p-10 shadow-2xl shadow-red-950/30">
+        <div
+          className="
+            bg-[#0D0915]
+            border
+            border-[#8B5CF6]/20
+            rounded-3xl
+            p-10
+            shadow-2xl
+            shadow-purple-950/30
+          "
+        >
 
-          {/* Logo */}
+          {/* =========================================
+              LOGO
+              ========================================= */}
 
           <div className="flex justify-center mb-8">
 
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#D50032] via-[#FF1744] to-[#FF4D6D] p-[1.5px] animate-bounce shadow-lg shadow-red-500/20">
+            <div
+              className="
+                w-16
+                h-16
+                rounded-2xl
+                bg-gradient-to-tr
+                from-[#6D28D9]
+                via-[#8B5CF6]
+                to-[#C084FC]
+                p-[1.5px]
+                animate-bounce
+                shadow-lg
+                shadow-purple-500/20
+              "
+            >
 
-              <div className="w-full h-full bg-[#050505] rounded-[14px] flex items-center justify-center font-heading font-extrabold text-[#FF1744] text-2xl">
-
+              <div
+                className="
+                  w-full
+                  h-full
+                  bg-[#05030a]
+                  rounded-[14px]
+                  flex
+                  items-center
+                  justify-center
+                  font-heading
+                  font-extrabold
+                  text-[#A855F7]
+                  text-2xl
+                "
+              >
                 SD
-
               </div>
 
             </div>
 
           </div>
 
-          {/* Name */}
+          {/* =========================================
+              NAME
+              ========================================= */}
 
           <div className="space-y-2 text-center mb-8">
 
-            <h2 className="text-xl font-bold font-heading text-white tracking-wider">
-
+            <h2
+              className="
+                text-xl
+                font-bold
+                font-heading
+                text-white
+                tracking-wider
+              "
+            >
               SRAVYA DANNANA
-
             </h2>
 
-            <p className="text-xs font-mono text-[#FF1744] flex items-center justify-center gap-2">
+            <p
+              className="
+                text-xs
+                font-mono
+                text-[#A855F7]
+                flex
+                items-center
+                justify-center
+                gap-2
+              "
+            >
 
               <Terminal size={14} />
 
-              <span>{bootText}</span>
+              <span>
+                {bootText}
+              </span>
 
             </p>
 
           </div>
 
-          {/* Progress Bar */}
+          {/* =========================================
+              PROGRESS BAR
+              ========================================= */}
 
           <div className="space-y-3">
 
-            <div className="w-full bg-white/5 h-2 rounded-full overflow-hidden border border-white/10 p-0.5">
+            <div
+              className="
+                w-full
+                bg-white/5
+                h-2
+                rounded-full
+                overflow-hidden
+                border
+                border-white/10
+                p-0.5
+              "
+            >
 
               <motion.div
-                className="h-full bg-gradient-to-r from-[#D50032] via-[#FF1744] to-[#FF4D6D] rounded-full shadow-[0_0_12px_rgba(255,23,68,0.6)]"
-                style={{ width: `${progress}%` }}
-                transition={{ duration: 0.3 }}
+                className="
+                  h-full
+                  bg-gradient-to-r
+                  from-[#6D28D9]
+                  via-[#8B5CF6]
+                  to-[#C084FC]
+                  rounded-full
+                  shadow-[0_0_12px_rgba(139,92,246,0.6)]
+                "
+                style={{
+                  width: `${progress}%`,
+                }}
+                transition={{
+                  duration: 0.3,
+                }}
               />
 
             </div>
 
             <div className="flex justify-between items-center">
 
-              <span className="text-[11px] font-mono text-slate-500">
+              <span
+                className="
+                  text-[11px]
+                  font-mono
+                  text-slate-500
+                "
+              >
                 SYSTEM BOOT
               </span>
 
-              <span className="text-[11px] font-mono text-[#FF1744]">
+              <span
+                className="
+                  text-[11px]
+                  font-mono
+                  text-[#A855F7]
+                "
+              >
                 {progress}% Loaded
               </span>
 

@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* =========================================
-   BLACK + RED PORTFOLIO THEME
+   BLACK + PURPLE PORTFOLIO THEME
    ========================================= */
 
 @layer base {
@@ -13,7 +14,7 @@
 
   body {
     margin: 0;
-    background: #050505;
+    background: #05030a;
     color: #ffffff;
     transition:
       background-color 0.3s ease,
@@ -21,28 +22,32 @@
   }
 
   ::selection {
-    background: #ff1744;
+    background: #8b5cf6;
     color: #ffffff;
   }
 }
+
 
 /* =========================================
    GLASS PANELS
    ========================================= */
 
 .glass-panel {
-  background: rgba(10, 10, 10, 0.88);
+  background: rgba(10, 7, 18, 0.88);
+
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 
-  border: 1px solid rgba(255, 23, 68, 0.18);
+  border: 1px solid rgba(139, 92, 246, 0.20);
 
   box-shadow:
     0 8px 30px rgba(0, 0, 0, 0.45);
 }
 
+
 .glass-card {
-  background: rgba(14, 14, 14, 0.88);
+  background: rgba(14, 10, 24, 0.88);
+
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
@@ -57,31 +62,35 @@
     box-shadow 0.3s ease;
 }
 
+
 .glass-card:hover {
   transform: translateY(-5px);
 
-  border-color: rgba(255, 23, 68, 0.65);
+  border-color: rgba(139, 92, 246, 0.65);
 
   box-shadow:
     0 12px 40px rgba(0, 0, 0, 0.7),
-    0 0 25px rgba(255, 23, 68, 0.18);
+    0 0 25px rgba(139, 92, 246, 0.18);
 }
+
 
 /* =========================================
-   RED GLOW
+   PURPLE GLOW
    ========================================= */
 
-.red-glow {
+.purple-glow {
   box-shadow:
-    0 0 15px rgba(255, 23, 68, 0.35),
-    0 0 35px rgba(255, 23, 68, 0.15);
+    0 0 15px rgba(139, 92, 246, 0.35),
+    0 0 35px rgba(139, 92, 246, 0.15);
 }
 
-.red-glow:hover {
+
+.purple-glow:hover {
   box-shadow:
-    0 0 20px rgba(255, 23, 68, 0.5),
-    0 0 45px rgba(255, 23, 68, 0.2);
+    0 0 20px rgba(139, 92, 246, 0.5),
+    0 0 45px rgba(139, 92, 246, 0.2);
 }
+
 
 /* =========================================
    TEXT GRADIENTS
@@ -90,34 +99,36 @@
 .text-gradient {
   background: linear-gradient(
     135deg,
-    #ff1744 0%,
-    #ff2b55 50%,
-    #d50032 100%
+    #8b5cf6 0%,
+    #a855f7 50%,
+    #6d28d9 100%
   );
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 
 .text-gradient-cyan {
   background: linear-gradient(
     135deg,
-    #ff1744,
-    #ff2b55
+    #8b5cf6,
+    #a855f7
   );
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 
 .text-gradient-purple {
   background: linear-gradient(
     135deg,
-    #d50032,
-    #ff1744,
-    #ff2b55
+    #6d28d9,
+    #8b5cf6,
+    #c084fc
   );
 
   -webkit-background-clip: text;
@@ -125,52 +136,57 @@
   background-clip: text;
 }
 
+
 /* =========================================
-   RED BUTTON EFFECT
+   PURPLE BUTTON EFFECT
    ========================================= */
 
-.red-button {
-  background: #ff1744;
+.purple-button {
+  background: #8b5cf6;
   color: #ffffff;
 
-  border: 1px solid #ff1744;
+  border: 1px solid #8b5cf6;
 
   box-shadow:
-    0 0 20px rgba(255, 23, 68, 0.25);
+    0 0 20px rgba(139, 92, 246, 0.25);
 
   transition: all 0.3s ease;
 }
 
-.red-button:hover {
-  background: #ff2b55;
+
+.purple-button:hover {
+  background: #a855f7;
 
   box-shadow:
-    0 0 25px rgba(255, 23, 68, 0.45),
-    0 0 50px rgba(255, 23, 68, 0.15);
+    0 0 25px rgba(139, 92, 246, 0.45),
+    0 0 50px rgba(139, 92, 246, 0.15);
 
   transform: translateY(-2px);
 }
 
+
 /* =========================================
-   RED OUTLINE BUTTON
+   PURPLE OUTLINE BUTTON
    ========================================= */
 
-.red-outline {
+.purple-outline {
   background: transparent;
-  color: #ff1744;
+  color: #a855f7;
 
-  border: 1px solid #ff1744;
+  border: 1px solid #8b5cf6;
 
   transition: all 0.3s ease;
 }
 
-.red-outline:hover {
-  background: #ff1744;
+
+.purple-outline:hover {
+  background: #8b5cf6;
   color: #ffffff;
 
   box-shadow:
-    0 0 25px rgba(255, 23, 68, 0.35);
+    0 0 25px rgba(139, 92, 246, 0.35);
 }
+
 
 /* =========================================
    GLOWING BORDER
@@ -179,6 +195,7 @@
 .glowing-border {
   position: relative;
 }
+
 
 .glowing-border::before {
   content: "";
@@ -192,10 +209,11 @@
 
   background: linear-gradient(
     90deg,
-    #ff1744,
-    #ff2b55,
-    #d50032,
-    #ff1744
+    #6d28d9,
+    #8b5cf6,
+    #a855f7,
+    #c084fc,
+    #8b5cf6
   );
 
   background-size: 300% 300%;
@@ -211,53 +229,68 @@
   animation: gradient-x 6s ease infinite;
 }
 
+
 .glowing-border:hover::before {
   opacity: 1;
 }
 
-/* =========================================
-   RED BORDER
-   ========================================= */
-
-.red-border {
-  border-color: #ff1744;
-}
-
-.red-border:hover {
-  border-color: #ff2b55;
-}
 
 /* =========================================
-   RED TEXT
+   PURPLE BORDER
    ========================================= */
 
-.red-text {
-  color: #ff1744;
+.purple-border {
+  border-color: #8b5cf6;
 }
 
-.red-text-bright {
-  color: #ff2b55;
+
+.purple-border:hover {
+  border-color: #a855f7;
 }
 
-.red-text-dark {
-  color: #d50032;
-}
 
 /* =========================================
-   RED BACKGROUND
+   PURPLE TEXT
    ========================================= */
 
-.red-background {
-  background-color: #ff1744;
+.purple-text {
+  color: #8b5cf6;
 }
+
+
+.purple-text-bright {
+  color: #a855f7;
+}
+
+
+.purple-text-light {
+  color: #c084fc;
+}
+
+
+.purple-text-dark {
+  color: #6d28d9;
+}
+
+
+/* =========================================
+   PURPLE BACKGROUND
+   ========================================= */
+
+.purple-background {
+  background-color: #8b5cf6;
+}
+
 
 .dark-background {
-  background-color: #050505;
+  background-color: #05030a;
 }
 
+
 .card-background {
-  background-color: #0d0d0d;
+  background-color: #0d0915;
 }
+
 
 /* =========================================
    CUSTOM SCROLLBAR
@@ -267,18 +300,22 @@
   width: 8px;
 }
 
+
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #05030a;
 }
 
+
 ::-webkit-scrollbar-thumb {
-  background: #d50032;
+  background: #6d28d9;
   border-radius: 10px;
 }
 
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff1744;
+  background: #8b5cf6;
 }
+
 
 /* =========================================
    GLOWING ICON
@@ -287,8 +324,9 @@
 .glow-cyan,
 .glow-purple {
   box-shadow:
-    0 0 20px rgba(255, 23, 68, 0.3);
+    0 0 20px rgba(139, 92, 246, 0.3);
 }
+
 
 /* =========================================
    ANIMATION
@@ -308,24 +346,29 @@
   }
 }
 
+
 /* =========================================
    LIGHT MODE
    ========================================= */
 
 .light {
-  background: #f5f5f5;
+  background: #f5f3ff;
   color: #171717;
 }
 
+
 .light body {
-  background: #f5f5f5;
+  background: #f5f3ff;
   color: #171717;
 }
+
 
 .light .glass-panel {
   background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(213, 0, 50, 0.15);
+
+  border: 1px solid rgba(139, 92, 246, 0.15);
 }
+
 
 .light .glass-card {
   background: rgba(255, 255, 255, 0.95);
@@ -337,9 +380,10 @@
     0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
+
 .light .glass-card:hover {
-  border-color: rgba(255, 23, 68, 0.5);
+  border-color: rgba(139, 92, 246, 0.5);
 
   box-shadow:
-    0 12px 40px rgba(255, 23, 68, 0.15);
+    0 12px 40px rgba(139, 92, 246, 0.15);
 }

@@ -16,11 +16,11 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="relative py-24 bg-[#050505] text-white overflow-hidden"
+      className="relative py-24 bg-[#05030a] text-white overflow-hidden"
     >
-      {/* Subtle Red Background Glow */}
-      <div className="absolute top-20 left-10 w-80 h-80 bg-[#FF1744]/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#D50032]/5 rounded-full blur-[140px] pointer-events-none" />
+      {/* Subtle Purple Background Glow */}
+      <div className="absolute top-20 left-10 w-80 h-80 bg-[#8B5CF6]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#6D28D9]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -30,7 +30,7 @@ export const About = () => {
 
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
 
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF1744]/10 border border-[#FF1744]/30 text-[#FF1744] text-xs font-mono tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B5CF6]/10 border border-[#8B5CF6]/30 text-[#A855F7] text-xs font-mono tracking-widest uppercase">
             <User size={14} />
             <span>About Me</span>
           </div>
@@ -72,7 +72,7 @@ export const About = () => {
 
               <div className="flex items-center gap-3">
 
-                <div className="p-3 rounded-2xl bg-[#FF1744]/10 border border-[#FF1744]/25 text-[#FF1744]">
+                <div className="p-3 rounded-2xl bg-[#8B5CF6]/10 border border-[#8B5CF6]/25 text-[#A855F7]">
                   <Sparkles size={24} />
                 </div>
 
@@ -82,12 +82,11 @@ export const About = () => {
                     Developer Profile
                   </h3>
 
-                  <p className="text-xs font-mono text-[#FF1744]">
+                  <p className="text-xs font-mono text-[#A855F7]">
                     Computer Science (AI & ML) Specialist
                   </p>
 
                 </div>
-
               </div>
 
               {/* About Text */}
@@ -104,12 +103,12 @@ export const About = () => {
                   (highlight, index) => (
                     <div
                       key={index}
-                      className="flex items-start gap-3 p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.07] hover:border-[#FF1744]/30 hover:bg-[#FF1744]/5 transition-all duration-300"
+                      className="flex items-start gap-3 p-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.07] hover:border-[#8B5CF6]/30 hover:bg-[#8B5CF6]/5 transition-all duration-300"
                     >
 
                       <CheckCircle2
                         size={18}
-                        className="text-[#FF1744] shrink-0 mt-0.5"
+                        className="text-[#A855F7] shrink-0 mt-0.5"
                       />
 
                       <span className="text-xs text-slate-300 font-medium">
@@ -132,7 +131,7 @@ export const About = () => {
 
                 <MapPin
                   size={15}
-                  className="text-[#FF1744]"
+                  className="text-[#A855F7]"
                 />
 
                 <span>
@@ -145,7 +144,7 @@ export const About = () => {
 
                 <Calendar
                   size={15}
-                  className="text-[#FF1744]"
+                  className="text-[#A855F7]"
                 />
 
                 <span>
@@ -168,7 +167,7 @@ export const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 glass-card p-8 rounded-3xl flex flex-col justify-between border-[#FF1744]/30 relative group"
+            className="lg:col-span-5 glass-card p-8 rounded-3xl flex flex-col justify-between border-[#8B5CF6]/30 relative group"
           >
 
             <div className="space-y-6">
@@ -179,7 +178,7 @@ export const About = () => {
 
                 <div className="flex items-center gap-3">
 
-                  <div className="p-3 rounded-2xl bg-gradient-to-tr from-[#D50032] to-[#FF1744] text-white shadow-lg shadow-red-500/25">
+                  <div className="p-3 rounded-2xl bg-gradient-to-tr from-[#6D28D9] to-[#8B5CF6] text-white shadow-lg shadow-purple-500/25">
                     <GraduationCap size={24} />
                   </div>
 
@@ -189,7 +188,7 @@ export const About = () => {
                       Education
                     </h3>
 
-                    <p className="text-xs font-mono text-[#FF1744]">
+                    <p className="text-xs font-mono text-[#A855F7]">
                       Academic Background
                     </p>
 
@@ -197,7 +196,7 @@ export const About = () => {
 
                 </div>
 
-                <span className="px-3 py-1 rounded-full bg-[#FF1744]/10 text-[#FF4D6D] border border-[#FF1744]/30 font-mono text-xs">
+                <span className="px-3 py-1 rounded-full bg-[#8B5CF6]/10 text-[#C084FC] border border-[#8B5CF6]/30 font-mono text-xs">
                   {personalInfo.education.graduation}
                 </span>
 
@@ -209,11 +208,11 @@ export const About = () => {
 
                 <div>
 
-                  <h4 className="text-lg font-bold text-white group-hover:text-[#FF4D6D] transition-colors">
+                  <h4 className="text-lg font-bold text-white group-hover:text-[#C084FC] transition-colors">
                     {personalInfo.education.degree}
                   </h4>
 
-                  <p className="text-sm text-[#FF1744] font-medium">
+                  <p className="text-sm text-[#A855F7] font-medium">
                     {personalInfo.education.field}
                   </p>
 
@@ -227,13 +226,13 @@ export const About = () => {
                     CGPA BOX
                     ========================================= */}
 
-                <div className="p-4 rounded-2xl bg-gradient-to-r from-[#FF1744]/10 via-[#D50032]/10 to-[#FF2B55]/10 border border-[#FF1744]/30 flex items-center justify-between">
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-[#8B5CF6]/10 via-[#6D28D9]/10 to-[#A855F7]/10 border border-[#8B5CF6]/30 flex items-center justify-between">
 
                   <div className="flex items-center gap-3">
 
                     <Award
                       size={22}
-                      className="text-[#FF1744]"
+                      className="text-[#A855F7]"
                     />
 
                     <div>
@@ -254,7 +253,7 @@ export const About = () => {
 
                   </div>
 
-                  <span className="px-2.5 py-1 rounded-lg bg-[#FF1744]/10 text-[#FF4D6D] text-xs font-mono font-semibold border border-[#FF1744]/30">
+                  <span className="px-2.5 py-1 rounded-lg bg-[#8B5CF6]/10 text-[#C084FC] text-xs font-mono font-semibold border border-[#8B5CF6]/30">
                     Active Student
                   </span>
 
@@ -270,7 +269,7 @@ export const About = () => {
 
               <BookOpen
                 size={15}
-                className="text-[#FF1744]"
+                className="text-[#A855F7]"
               />
 
               <span>
@@ -282,7 +281,6 @@ export const About = () => {
           </motion.div>
 
         </div>
-
       </div>
     </section>
   );
